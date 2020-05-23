@@ -1,0 +1,38 @@
+https://www.php.net/manual/es/class.arrayiterator.php
+http://docs.php.net/manual/es/class.iterator.php
+http://docs.php.net/manual/es/class.iteratoraggregate.php
+https://www.php.net/manual/es/class.countable.php
+
+Con la interfaz Iterator se deben definir los siguientes 5 métodos públicos en la clase que la está implementando:
+
+    current(): devuelve el elemento actual.
+    key(): devuelve la clave del elemento actual.
+    next(): Avanza al siguiente elemento.
+    rewind(): Rebobine la Iterator al primer elemento.
+    valid(): Comprueba si la posición actual es válida.
+
+Es decir que cuando se usa un foreach con un objeto que implementa la interfaz Iterator internamente hace lo siguiente:
+
+    Al comienzo de la ejecución del foreach llama al método rewind() para reiniciar la iteración.
+    Antes de cada iteración se llama al método valid() para comprobar si hay un dato válido.
+    Dependiendo del resultado de valid() toma una decisión:
+        Si devuelve falso el bucle termina.
+        Si devuelve verdadero llama a los métodos current() y key() para devolver el elemento actual y su clave.
+    Se ejecutan las operaciones del bucle con los elementos devueltos.
+    Después de cada iteración se llama al método next() hallar el siguiente elemento y se repiten las instrucciones desde el paso 2.
+
+La implementación de los métodos de esta interfaz usada en el video se encuentra en http://php.net/manual/es/language.oop5.iterations.php
+
+Como alternativa se puede usar la interfaz IteratorAggregate que solo tiene un método que se debe definir getIterator() el cual devuelve un iterador que se encargará de hacer las operaciones para iterar el objeto.
+¿Cuál es la diferencia?
+
+La diferencia entre las 2 interfaces es que un objeto que implemente Iterator puede iterar directamente con las propiedades del objeto o crear un iterador externo, en cambio con un objeto que implementa IteratorAggregate solo crea un iterador externo que se encargará de iterar las propiedades del objeto.
+
+Por tanto si se quiere tener un mayor control y personalización del comportamiento de la iteración de las propiedades de un objeto se usa la interfaz Iterator pero si las propiedades del objeto son sencillas como por ejemplo un array, podemos resolverlo usando la interfaz IteratorAggregate que de manera sencilla y fácil se delega la iteración a otra clase para así reusar métodos de iteración comunes como por ejemplo la clase ArrayIterator.
+
+ArrayIterator es una clase que te permite crear un iterador de cualquier array de PHP. Esta clase también es proveída por la biblioteca SPL.
+
+Countable es una interfaz también perteneciente a la Biblioteca Estándar de PHP con la cual podemos contar el número de elementos de un objeto. Se implementa de la siguiente manera:
+
+
+

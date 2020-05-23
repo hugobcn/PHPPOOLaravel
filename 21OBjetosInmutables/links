@@ -1,0 +1,3 @@
+métodos que interactuan con ellos no modifiquen su estado, esto es lo que llamamos objetos inmutables
+
+https://www.php.net/manual/es/function.array-filter.php
