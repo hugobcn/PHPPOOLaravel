@@ -1,0 +1,10 @@
+{
+    "require": {
+        "nesbot/carbon": "^2.34"
+    },
+    "autoload": {
+        "psr-4": {
+            "Styde\\": "src/"
+        }
+    }
+}

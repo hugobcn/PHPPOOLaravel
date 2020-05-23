@@ -1,0 +1,8 @@
+cd /var/www/hugo
+
+composer require nesbot/carbon   xxxx/sss
+
+https://www.php.net/manual/es/class.datetime.php
+https://styde.net/componente-carbon-fechas-laravel-5/
+
+https://carbon.nesbot.com/docs/

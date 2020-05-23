@@ -1,0 +1,27 @@
+https://github.com/StydeNet/php-oop/tree/master/lesson29
+https://styde.net/clases-anonimas-en-php/
+
+
+
+cd /var/www/hugo
+
+composer require --dev phpunit/phpunit
+
+Clase anomima para instaciar clases abstractas
+
+
+Lo usual para instanciar una clase es $objeto = new UnaClaseAbstracta(); pero cuando la clase que queremos instanciar no nos permite hacerlo directamente o nos interesa crear otras clases para poder instanciarlas podemos hacer lo siguiente:
+
+$objeto = new class ($foo, $bar) extends UnaClaseAbstracta implements UnaInterfaz {}
+
+donde new class son las palabras reservadas para indicar que queremos crear una nueva clase e instanciarla, pero sin indicar el nombre de la clase, tal y como sucede con las funciones anónimas.
+
+($foo, $bar) son las variables que pasamos a través del constructor, si no es necesario simplemente se omiten.
+
+Luego podemos extender o implementar otras clases en caso de ser requerido. Como por ejemplo en nuestro caso:
+
+$user = new class ($attribute) extends Model { };
+
+De igual forma, podemos sobrescribir atributos y métodos de las otras clases a las que extiende o implementan.
+
+Puedes hacer la prueba en el navegador con el siguiente código:

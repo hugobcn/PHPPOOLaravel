@@ -1,0 +1,49 @@
+https://github.com/StydeNet/php-oop/tree/master/lesson28
+https://styde.net/array-access-en-php-2/
+
+
+
+cd /var/www/hugo
+
+composer require --dev phpunit/phpunit
+
+
+https://phpunit.de/getting-started/phpunit-7.html
+
+https://phpunit.de/manual/6.5/en/appendixes.assertions.html
+
+https://phpunit.de/manual/6.5/en/appendixes.assertions.html#appendixes.assertions.assertSame
+
+https://phpunit.de/manual/6.5/en/textui.html#textui.clioptions
+
+https://www.php.net/manual/es/function.str-replace.php
+
+Hacer pruebas
+
+vendor/bin/phpunit tests/ --color
+
+https://phpunit.de/manual/6.5/en/appendixes.configuration.
+
+https://styde.net/alias-de-comandos-para-la-consola-windowslinuxmac
+
+https://github.com/StydeNet/php-oop/blob/master/lesson28/phpunit.xml#L4
+
+https://github.com/StydeNet/php-oop/blob/master/lesson28/bootstrap.php
+
+
+Sin embargo, como toda interfaz es un contrato, tenemos que además implementar cuatro métodos que nos permitirán simular trabajar con objetos usando la sintaxis de array:
+
+abstract public boolean offsetExists ( mixed $offset ) que se ejecutará cuando queremos comprobar si existe un índice.
+
+abstract public mixed offsetGet ( mixed $offset ) que nos permitirá recuperar el valor de una clave o $offset.
+
+abstract public void offsetSet ( mixed $offset , mixed $value ) para asignar una clave $offset con valor $value al objeto.
+
+abstract public void offsetUnset ( mixed $offset ) que destruye un $offset o clave.
+
+Para crear una nueva prueba usando PHPUnit, creamos un nuevo archivo con nombre ArrayAccessTest.php dentro del directorio test
+
+
+Además, crea la clase llamada ArrayAccessTest sin olvidar extender de la clase PHPUnit\Framework\TestCase que nos proporciona los métodos para escribir las pruebas.
+
+Al ser la clase Model una clase abstracta no la podemos instanciar directamente, es por ello que para probar el uso de la interfaz ArrayAccess creamos una clase UserTest que extienda de la clase Model, la cual si podemos instanciar en la prueba.
