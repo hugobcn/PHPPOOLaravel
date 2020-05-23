@@ -1,0 +1,17 @@
+{
+    "name": "hugoberpar/14get-set-isset",
+    "license": "no",
+    "authors": [
+        {
+            "name": "hugo bermudez",
+            "email": "hugoberpar@hugo.local"
+        }
+    ],
+    "require": {
+        
+    },
+    "autoload": {
+        "psr-4": {
+            "Styde\\": "src/"
+        }
+}

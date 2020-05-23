@@ -1,0 +1,6 @@
+llamado Traits o rasgos que hace posible que clases independientes y pertenecientes
+ a distintas jerarquías puedan disponer de los mismos métodos.
+
+https://www.php.net/manual/es/language.oop5.traits.php
+
+https://styde.net/php-traits-en-laravel-5-1/
